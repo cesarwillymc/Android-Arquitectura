@@ -22,8 +22,8 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(R.
     NavigationView.OnNavigationItemSelectedListener {
     override val viewModel: MainActivityViewModel by viewModel()
 
-    override fun init2() {
-        super.init2()
+    override fun onCreateLogic() {
+        super.onCreateLogic()
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         setTransparentStatusBar()

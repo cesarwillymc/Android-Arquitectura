@@ -14,7 +14,7 @@ abstract class BaseActivity<ViewModel : BaseViewModel, DB : ViewDataBinding>(@La
     open lateinit var binding: DB
 
     // lateinit var dataBindingComponent: DataBindingComponent
-    private fun init() {
+    private fun initBinding() {
 
         try{
             binding = DataBindingUtil.setContentView(this , layout)
@@ -28,13 +28,13 @@ abstract class BaseActivity<ViewModel : BaseViewModel, DB : ViewDataBinding>(@La
 
     }
 
-    open fun init2(){}
+    open fun onCreateLogic(){}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        init()
-        init2()
+        initBinding()
+        onCreateLogic()
     }
 
 

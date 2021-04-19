@@ -24,13 +24,17 @@ class WeatherApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        //Stop koin for if its open
         stopKoin()
         setInstance(this)
+
         if (BuildConfig.DEBUG && !isRoboUnitTest()) {
             Timber.plant(Timber.DebugTree())
         }
+        //Init bugsnag for check errors
         Bugsnag.start(this)
 
+        //Init koin dependency injection
         startKoin {
             // Koin Android logger
             androidLogger()
