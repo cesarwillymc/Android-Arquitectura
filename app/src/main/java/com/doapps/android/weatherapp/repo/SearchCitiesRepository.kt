@@ -12,9 +12,7 @@ import com.doapps.android.weatherapp.utils.domain.Resource
 
 import java.util.concurrent.TimeUnit
 
-/**
- * Created by Furkan on 2019-10-31
- */
+
 
 class SearchCitiesRepository (
     private val searchCitiesLocalDataSource: SearchCitiesLocalDataSource,

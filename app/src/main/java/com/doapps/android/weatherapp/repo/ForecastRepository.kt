@@ -12,9 +12,7 @@ import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 import java.util.concurrent.TimeUnit
 
-/**
- * Created by Furkan on 2019-10-21
- */
+
 
 class ForecastRepository (
     private val forecastRemoteDataSource: ForecastRemoteDataSource,

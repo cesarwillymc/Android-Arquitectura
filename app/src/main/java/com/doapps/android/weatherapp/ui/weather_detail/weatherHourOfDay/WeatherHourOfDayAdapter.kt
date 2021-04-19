@@ -8,9 +8,6 @@ import com.doapps.android.weatherapp.core.BaseAdapter
 import com.doapps.android.weatherapp.databinding.ItemWeatherHourOfDayBinding
 import com.doapps.android.weatherapp.domain.model.ListItem
 
-/**
- * Created by Furkan on 2019-10-26
- */
 
 class WeatherHourOfDayAdapter(private val callBack: (ListItem) -> Unit) : BaseAdapter<ListItem>(diffCallback) {
 

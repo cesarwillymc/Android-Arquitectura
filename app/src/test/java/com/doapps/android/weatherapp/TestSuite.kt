@@ -9,9 +9,6 @@ import com.doapps.android.weatherapp.repo.ForecastRepositoryTest
 import com.doapps.android.weatherapp.viewModel.DashboardViewModelTest
 import com.doapps.android.weatherapp.viewModel.SearchViewModelTest
 import com.doapps.android.weatherapp.viewModel.WeatherDetailViewModelTest
-import com.doapps.android.weatherapp.viewState.CurrentWeatherViewStateTest
-import com.doapps.android.weatherapp.viewState.ForecastViewStateTest
-import com.doapps.android.weatherapp.viewState.SearchViewStateTest
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 import org.robolectric.annotation.Config
@@ -23,11 +20,8 @@ import org.robolectric.annotation.Config
 @Suite.SuiteClasses(
     CitiesForSearchDaoTest::class,
     CurrentWeatherDaoTest::class,
-    CurrentWeatherViewStateTest::class,
     DashboardViewModelTest::class,
     ForecastDaoTest::class,
-    ForecastViewStateTest::class,
-    SearchViewStateTest::class,
     SearchViewModelTest::class,
     WeatherDetailViewModelTest::class,
     ForecastRepositoryTest::class,
