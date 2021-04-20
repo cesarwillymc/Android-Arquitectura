@@ -19,8 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : BaseFragment<DashboardFragmentViewModel, FragmentDashboardBinding>(R.layout.fragment_dashboard) {
     override val viewModel: DashboardFragmentViewModel by viewModel()
-    override fun init() {
-        super.init()
+    override fun onCreateConfig() {
+        super.onCreateConfig()
         initForecastAdapter()
         sharedElementReturnTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
 

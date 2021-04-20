@@ -17,13 +17,13 @@ abstract class BaseFragment<ViewModel  : BaseViewModel, DB : ViewDataBinding>(@L
     protected abstract val viewModel: ViewModel
     open lateinit var binding: DB
    // lateinit var dataBindingComponent: DataBindingComponent
-    private fun init(inflater: LayoutInflater, container: ViewGroup) {
+    private fun onCreateConfig(inflater: LayoutInflater, container: ViewGroup) {
         binding = DataBindingUtil.inflate(inflater, layout, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.setVariable(BR.viewModel, viewModel)
     }
 
-    open fun init() {}
+    open fun onCreateConfig() {}
 
 
     open fun onInject() {}
@@ -38,8 +38,8 @@ abstract class BaseFragment<ViewModel  : BaseViewModel, DB : ViewDataBinding>(@L
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        init(inflater, container!!)
-        init()
+        onCreateConfig(inflater, container!!)
+        onCreateConfig()
         super.onCreateView(inflater, container, savedInstanceState)
         return binding.root
     }

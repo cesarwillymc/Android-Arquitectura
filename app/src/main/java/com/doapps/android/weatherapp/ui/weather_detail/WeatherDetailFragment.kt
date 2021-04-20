@@ -9,7 +9,6 @@ import com.doapps.android.weatherapp.databinding.FragmentWeatherDetailBinding
 import com.doapps.android.weatherapp.domain.model.ListItem
 import com.doapps.android.weatherapp.ui.weather_detail.weatherHourOfDay.WeatherHourOfDayAdapter
 import com.doapps.android.weatherapp.utils.extensions.observeWith
-import io.reactivex.disposables.CompositeDisposable
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeatherDetailFragment : BaseFragment<WeatherDetailViewModel, FragmentWeatherDetailBinding>(
@@ -19,10 +18,10 @@ class WeatherDetailFragment : BaseFragment<WeatherDetailViewModel, FragmentWeath
     override val viewModel: WeatherDetailViewModel by viewModel()
 
     private val weatherDetailFragmentArgs: WeatherDetailFragmentArgs by navArgs()
-    var disposable = CompositeDisposable()
 
-    override fun init() {
-        super.init()
+
+    override fun onCreateConfig() {
+        super.onCreateConfig()
         binding.viewModel?.weatherItem?.set(weatherDetailFragmentArgs.weatherItem)
         binding.viewModel?.selectedDayDate = weatherDetailFragmentArgs.weatherItem.dtTxt?.substringBefore(" ")
 
@@ -52,7 +51,6 @@ class WeatherDetailFragment : BaseFragment<WeatherDetailViewModel, FragmentWeath
 
     private fun initWeatherHourOfDayAdapter(list: List<ListItem>) {
         val adapter = WeatherHourOfDayAdapter { item ->
-            // TODO - onClick
         }
 
         binding.recyclerViewHourOfDay.adapter = adapter
@@ -61,6 +59,5 @@ class WeatherDetailFragment : BaseFragment<WeatherDetailViewModel, FragmentWeath
 
     override fun onDestroy() {
         super.onDestroy()
-        disposable.clear()
     }
 }

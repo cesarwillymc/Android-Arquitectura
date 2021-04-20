@@ -19,8 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>(R.layout.fragment_search) {
     override val viewModel: SearchViewModel by viewModel()
-    override fun init() {
-        super.init()
+    override fun onCreateConfig() {
+        super.onCreateConfig()
         initSearchResultsAdapter()
         initSearchView()
 

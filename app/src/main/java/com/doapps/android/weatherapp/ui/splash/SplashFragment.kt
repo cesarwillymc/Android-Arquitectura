@@ -16,8 +16,8 @@ class SplashFragment : BaseFragment<SplashFragmentViewModel, FragmentSplashBindi
     override val viewModel: SplashFragmentViewModel by viewModel()
     var disposable = CompositeDisposable()
 
-    override fun init() {
-        super.init()
+    override fun onCreateConfig() {
+        super.onCreateConfig()
 
         if (binding.viewModel?.sharedPreferences?.getString(Constants.Coords.LON, "").isNullOrEmpty()) {
             binding.buttonExplore.show()
