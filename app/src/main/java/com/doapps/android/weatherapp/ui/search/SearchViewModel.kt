@@ -6,8 +6,8 @@ import com.doapps.android.weatherapp.core.BaseViewModel
 import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.conexionmodule.db.room.entity.CoordEntity
-import com.doapps.android.weatherapp.domain.usecase.SearchCitiesUseCase
-import com.doapps.android.weatherapp.utils.domain.Resource
+import com.doapps.android.domain.usecase.SearchCitiesUseCase
+import com.doapps.android.domain.utils.status.Resource
 import kotlinx.coroutines.*
 
 

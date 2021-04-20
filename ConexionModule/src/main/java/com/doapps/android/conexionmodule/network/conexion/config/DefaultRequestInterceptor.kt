@@ -1,9 +1,8 @@
 package com.doapps.android.conexionmodule.network.conexion.config
 
 
-import android.content.Context
 import com.doapps.android.conexionmodule.BuildConfig
-import com.doapps.android.conexionmodule.db.dataStore.DataStoreManager.Companion.getStringDataStore
+import com.doapps.android.conexionmodule.db.dataStore.DataStoreManager
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.first
 import okhttp3.Interceptor
@@ -11,7 +10,7 @@ import okhttp3.Response
 
 
 
-class DefaultRequestInterceptor(private val context: Context) : Interceptor {
+class DefaultRequestInterceptor(private val dataStore: DataStoreManager) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val url = chain.request().url
@@ -26,7 +25,7 @@ class DefaultRequestInterceptor(private val context: Context) : Interceptor {
     private fun getTokenData(): String {
         var token=""
         GlobalScope.launch(Dispatchers.Main) {
-            token=context.getStringDataStore("token").first()
+            token= dataStore.getStringDataStore("token").first()
         }
         return token
     }

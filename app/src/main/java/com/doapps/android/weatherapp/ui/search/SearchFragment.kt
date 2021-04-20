@@ -11,7 +11,7 @@ import com.doapps.android.weatherapp.core.BaseFragment
 import com.doapps.android.weatherapp.databinding.FragmentSearchBinding
 import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.conexionmodule.utils.tryCatch
-import com.doapps.android.weatherapp.domain.usecase.SearchCitiesUseCase
+import com.doapps.android.domain.usecase.SearchCitiesUseCase
 import com.doapps.android.weatherapp.ui.search.result.SearchResultAdapter
 import com.doapps.android.weatherapp.utils.extensions.hideKeyboard
 import com.doapps.android.weatherapp.utils.extensions.observeWith

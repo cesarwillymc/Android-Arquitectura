@@ -7,11 +7,11 @@ import androidx.lifecycle.Observer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
-import com.doapps.android.weatherapp.domain.usecase.CurrentWeatherUseCase
-import com.doapps.android.weatherapp.domain.usecase.ForecastUseCase
+import com.doapps.android.domain.usecase.CurrentWeatherUseCase
+import com.doapps.android.domain.usecase.ForecastUseCase
+import com.doapps.android.domain.utils.status.Resource
+import com.doapps.android.domain.utils.status.Status
 import com.doapps.android.weatherapp.ui.dashboard.DashboardFragmentViewModel
-import com.doapps.android.weatherapp.utils.domain.Resource
-import com.doapps.android.weatherapp.utils.domain.Status
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK

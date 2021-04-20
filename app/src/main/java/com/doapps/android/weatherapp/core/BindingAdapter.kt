@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.doapps.android.weatherapp.R
-import com.doapps.android.weatherapp.utils.domain.BaseViewState
+import com.doapps.android.domain.utils.status.BaseViewState
 import com.doapps.android.weatherapp.utils.extensions.hide
 import com.doapps.android.weatherapp.utils.extensions.show
 import com.squareup.picasso.Picasso

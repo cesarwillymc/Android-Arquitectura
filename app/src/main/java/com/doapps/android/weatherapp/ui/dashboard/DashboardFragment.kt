@@ -9,8 +9,8 @@ import com.doapps.android.weatherapp.R
 import com.doapps.android.weatherapp.core.BaseFragment
 import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.weatherapp.databinding.FragmentDashboardBinding
-import com.doapps.android.weatherapp.domain.usecase.CurrentWeatherUseCase
-import com.doapps.android.weatherapp.domain.usecase.ForecastUseCase
+import com.doapps.android.domain.usecase.CurrentWeatherUseCase
+import com.doapps.android.domain.usecase.ForecastUseCase
 import com.doapps.android.weatherapp.ui.dashboard.forecast.ForecastAdapter
 import com.doapps.android.weatherapp.ui.main.MainActivity
 import com.doapps.android.weatherapp.utils.extensions.isNetworkAvailable

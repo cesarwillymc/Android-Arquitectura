@@ -2,15 +2,13 @@ package com.doapps.android.weatherapp
 
 import android.app.Application
 import android.content.Context
-import android.os.Build
 import com.bugsnag.android.Bugsnag
-import com.doapps.android.weatherapp.di.module.*
+import com.doapps.android.weatherapp.module.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.dsl.module
-import timber.log.Timber
 
 class WeatherApp : Application() {
 
@@ -28,9 +26,7 @@ class WeatherApp : Application() {
         stopKoin()
         setInstance(this)
 
-        if (BuildConfig.DEBUG && !isRoboUnitTest()) {
-            Timber.plant(Timber.DebugTree())
-        }
+
         //Init bugsnag for check errors
         Bugsnag.start(this)
 
@@ -49,7 +45,5 @@ class WeatherApp : Application() {
         }
     }
 
-    private fun isRoboUnitTest(): Boolean {
-        return "robolectric" == Build.FINGERPRINT
-    }
+
 }

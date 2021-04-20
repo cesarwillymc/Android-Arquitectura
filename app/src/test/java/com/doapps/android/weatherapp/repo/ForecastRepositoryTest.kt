@@ -6,12 +6,12 @@ import androidx.lifecycle.Observer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
-import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastLocalDataSource
-import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastRemoteDataSource
-import com.doapps.android.weatherapp.repo.forecast.ForecastRepositoryImpl
+import com.doapps.android.domain.datasource.forecast.ForecastLocalDataSource
+import com.doapps.android.domain.datasource.forecast.ForecastRemoteDataSource
+import com.doapps.android.domain.repo.forecast.ForecastRepositoryImpl
 import com.doapps.android.weatherapp.util.createSampleForecastResponse
-import com.doapps.android.weatherapp.utils.domain.Resource
-import com.doapps.android.weatherapp.utils.domain.Status
+import com.doapps.android.domain.utils.status.Resource
+import com.doapps.android.domain.utils.status.Status
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import org.junit.After

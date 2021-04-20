@@ -7,10 +7,10 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.doapps.android.conexionmodule.db.room.WeatherDatabase
 import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
-import com.doapps.android.weatherapp.di.module.dataSourceModule
-import com.doapps.android.weatherapp.di.module.repositoryModule
-import com.doapps.android.weatherapp.di.module.viewModelModule
-import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastLocalDataSource
+import com.doapps.android.weatherapp.module.dataSourceModule
+import com.doapps.android.weatherapp.module.repositoryModule
+import com.doapps.android.weatherapp.module.viewModelModule
+import com.doapps.android.domain.datasource.forecast.ForecastLocalDataSource
 import com.doapps.android.weatherapp.ui.weather_detail.WeatherDetailViewModel
 import com.doapps.android.weatherapp.util.createSampleForecastResponse
 import io.mockk.*

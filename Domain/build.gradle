@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+ext {
+
+    lifecycleViewModelKtxVersion = '2.3.0-alpha01'
+    lifecycleVersion = '2.2.0'
+    retrofitVersion = '2.7.2'
+    algoliaVersion = '3.+'
+
+}
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.30"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //algolia used in places
+    implementation "com.algolia:algoliasearch-android:$algoliaVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewModelKtxVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.5"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation project(path: ':ConexionModule')
+}

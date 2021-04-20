@@ -11,7 +11,7 @@
 
         <variable
             name="viewState"
-            type="com.doapps.android.weatherapp.utils.domain.Resource" />
+            type="com.doapps.android.domain.utils.status.Resource" />
 
     </data>
 

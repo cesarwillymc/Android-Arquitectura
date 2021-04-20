@@ -9,7 +9,6 @@ plugins {
 }
 
 
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -21,7 +20,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [ key_api:"AIzaSyDKxkXnUQgYhwhsPOe4zqaSOr0UrooU_A0"]
+        manifestPlaceholders = [key_api: "AIzaSyDKxkXnUQgYhwhsPOe4zqaSOr0UrooU_A0"]
     }
     buildTypes {
         debug {
@@ -71,57 +70,39 @@ android {
     }
 
 
-
     testOptions.unitTests {
         includeAndroidResources = true
     }
 }
 ext {
     support_version = '1.0.0'
-    appCompatVersion = '1.2.0-alpha03'
-    coreKtxVersion = '1.3.0-alpha02'
-    rxJavaVersion = '2.2.18'
     rxKotlinVersion = '2.4.0'
     rxAndroidVersion = '2.1.1'
     rxAnimationsVersion = '0.0.6'
-    timberVersion = '4.7.1'
     daggerVersion = '2.26'
-    retrofitVersion = '2.7.2'
-    okHttpVersion = '4.4.1'
     picassoVersion = '2.71828'
-    lifecycle_version = '1.1.1'
-    navigationVersion = '2.3.0-alpha03'
-
-    stethoVersion = '1.5.1'
-    legacySupportv4Version = '1.0.0'
     lifecycleViewModelKtxVersion = '2.3.0-alpha01'
     lifecycleVersion = '2.2.0'
-    roomVersion = '2.2.3'
-    dataBindingVersion = '3.6.1'
     shadowViewVersion = '0.0.3'
     algoliaVersion = '3.+'
-    materialDesignVersion = "1.0.0"
-
-    coreTestingVersion = '2.1.0'
     mockKVersion = '1.9.3'
-    truthExtVersion = '1.3.0-alpha03'
-    truthVersion = '1.0'
-    androidxTestRunnerVersion = '1.3.0-alpha03'
-    espressoCoreVersion = '3.3.0-alpha03'
-    junitVersion = '4.12'
     junitExtVersion = '1.1.1'
     robolectricVersion = '4.3.1'
-
     threetenabpVersion = '1.2.2'
 
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    //Modules
+    implementation project(path: ':ConexionModule')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
     //threetenabp
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabpVersion"
 
@@ -130,7 +111,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$support_version"
     implementation "androidx.cardview:cardview:$support_version"
     //rx
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
     implementation "com.mikhaellopez:rxanimation:$rxAnimationsVersion"
@@ -141,12 +122,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewModelKtxVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.5"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
-
-
-
-
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01"
-    //algolia
+
+    //algolia used in places
     implementation "com.algolia:algoliasearch-android:$algoliaVersion"
 
     //navigation
@@ -161,57 +139,37 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
 
 
-    //net
-   /* implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"*/
+    //User for convert data
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //picasso
     implementation "com.squareup.picasso:picasso:$picassoVersion"
 
 
-
-    //shadowView
+    //shadowView used in xml
     implementation "com.loopeer.lib:shadow:$shadowViewVersion"
 
-    //timber
-    implementation "com.jakewharton.timber:timber:$timberVersion"
 
-    //stetho
-    implementation "com.facebook.stetho:stetho:$stethoVersion"
-    implementation "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
-    implementation "com.facebook.stetho:stetho-urlconnection:$stethoVersion"
-    implementation project(path: ':ConexionModule')
-
-
-    //Testing
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test:runner:$androidxTestRunnerVersion"
-    androidTestImplementation "androidx.test:rules:$androidxTestRunnerVersion"
-    testImplementation "androidx.test.ext:junit-ktx:$junitExtVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
-    testImplementation "com.google.truth:truth:$truthVersion"
-    testImplementation "androidx.test.ext:truth:$truthExtVersion"
-    testImplementation "io.mockk:mockk:$mockKVersion"
-
-    testImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
-    testImplementation "org.robolectric:robolectric:$robolectricVersion"
-
-
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-// Koin AndroidX Fragment features
-    implementation "org.koin:koin-androidx-fragment:$koin_version"
-    testImplementation "org.koin:koin-test:$koin_version"
-
-
-
+    //Bugsnac used in app manifest
     implementation "com.bugsnag:bugsnag-android:5.+"
+    implementation project(path: ':Domain')
+    implementation project(path: ':Domain')
 
+    //Room
     def room_version = '2.2.5'
     implementation "androidx.room:room-runtime:$room_version"
 
 
+    //Testing
+    testImplementation "androidx.test.ext:junit-ktx:$junitExtVersion"
+    testImplementation "io.mockk:mockk:$mockKVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "org.koin:koin-test:$koin_version"
+
+
+    // Used for injection dependency
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
 
 
 }

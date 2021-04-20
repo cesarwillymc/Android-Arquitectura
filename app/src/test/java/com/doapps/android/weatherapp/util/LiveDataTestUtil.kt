@@ -1,8 +1,7 @@
 package com.doapps.android.weatherapp.util
 
 import com.doapps.android.conexionmodule.db.room.entity.*
-import com.doapps.android.weatherapp.db.entity.*
-import com.doapps.android.weatherapp.domain.model.*
+import com.doapps.android.conexionmodule.network.model.*
 
 
 // Data Generators
