@@ -1,8 +1,8 @@
 package com.doapps.android.weatherapp.domain.datasource.currentWeather
 
-import com.doapps.android.weatherapp.db.dao.CurrentWeatherDao
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
-import com.doapps.android.weatherapp.domain.model.CurrentWeatherResponse
+import com.doapps.android.conexionmodule.network.model.CurrentWeatherResponse
+import com.doapps.android.conexionmodule.db.room.dao.CurrentWeatherDao
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 
 
 
@@ -11,5 +11,7 @@ class CurrentWeatherLocalDataSource (private val currentWeatherDao: CurrentWeath
 
     fun getCurrentWeather() = currentWeatherDao.getCurrentWeather()
 
-    suspend fun insertCurrentWeather(currentWeather: CurrentWeatherResponse) = currentWeatherDao.deleteAndInsert(CurrentWeatherEntity(currentWeather))
+    suspend fun insertCurrentWeather(currentWeather: CurrentWeatherResponse) = currentWeatherDao.deleteAndInsert(
+        CurrentWeatherEntity(currentWeather)
+    )
 }

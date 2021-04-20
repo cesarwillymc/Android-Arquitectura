@@ -2,14 +2,12 @@ package com.doapps.android.weatherapp.domain.datasource.searchCities
 
 import com.algolia.search.saas.places.PlacesClient
 import com.algolia.search.saas.places.PlacesQuery
-import com.doapps.android.weatherapp.domain.ExceptionGeneral
-import com.doapps.android.weatherapp.domain.SafeApiRequest
-import com.doapps.android.weatherapp.domain.model.SearchResponse
-import com.doapps.android.weatherapp.utils.extensions.tryCatch
+import com.doapps.android.conexionmodule.network.conexion.ExceptionGeneral
+import com.doapps.android.conexionmodule.network.conexion.config.SafeApiRequest
+import com.doapps.android.conexionmodule.network.model.SearchResponse
+import com.doapps.android.conexionmodule.utils.tryCatch
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.suspendCancellableCoroutine
-import java.lang.reflect.Type
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import com.google.gson.JsonElement

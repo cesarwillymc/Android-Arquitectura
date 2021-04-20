@@ -5,8 +5,8 @@ import androidx.lifecycle.Observer
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.doapps.android.weatherapp.db.WeatherDatabase
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.WeatherDatabase
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.di.module.dataSourceModule
 import com.doapps.android.weatherapp.di.module.repositoryModule
 import com.doapps.android.weatherapp.di.module.viewModelModule

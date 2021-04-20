@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.doapps.android.weatherapp.core.Constants
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherRemoteDataSource
 import com.doapps.android.weatherapp.repo.currentweather.CurrentWeatherRepositoryImpl

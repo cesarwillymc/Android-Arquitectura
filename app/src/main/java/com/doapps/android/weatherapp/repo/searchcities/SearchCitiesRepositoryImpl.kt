@@ -2,11 +2,11 @@ package com.doapps.android.weatherapp.repo.searchcities
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
+import com.doapps.android.conexionmodule.network.model.SearchResponse
 import com.doapps.android.weatherapp.core.Constants.NetworkService.RATE_LIMITER_TYPE
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.weatherapp.domain.datasource.searchCities.SearchCitiesLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.searchCities.SearchCitiesRemoteDataSource
-import com.doapps.android.weatherapp.domain.model.SearchResponse
 import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 

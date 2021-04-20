@@ -1,7 +1,7 @@
 package com.doapps.android.weatherapp.repo.forecast
 
 import androidx.lifecycle.LiveData
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 

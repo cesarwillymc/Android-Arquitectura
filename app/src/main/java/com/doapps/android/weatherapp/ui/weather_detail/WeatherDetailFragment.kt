@@ -3,10 +3,10 @@ package com.doapps.android.weatherapp.ui.weather_detail
 import android.transition.TransitionInflater
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.R
 import com.doapps.android.weatherapp.core.BaseFragment
 import com.doapps.android.weatherapp.databinding.FragmentWeatherDetailBinding
-import com.doapps.android.weatherapp.domain.model.ListItem
 import com.doapps.android.weatherapp.ui.weather_detail.weatherHourOfDay.WeatherHourOfDayAdapter
 import com.doapps.android.weatherapp.utils.extensions.observeWith
 import org.koin.androidx.viewmodel.ext.android.viewModel

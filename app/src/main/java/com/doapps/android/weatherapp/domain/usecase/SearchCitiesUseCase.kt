@@ -2,7 +2,7 @@ package com.doapps.android.weatherapp.domain.usecase
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.weatherapp.repo.searchcities.SearchCitiesRepository
 import com.doapps.android.weatherapp.repo.searchcities.SearchCitiesRepositoryImpl
 import com.doapps.android.weatherapp.utils.UseCaseLiveData

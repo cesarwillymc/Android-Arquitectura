@@ -3,7 +3,7 @@ package com.doapps.android.weatherapp.domain.usecase
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.doapps.android.weatherapp.core.Constants
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.repo.forecast.ForecastRepository
 import com.doapps.android.weatherapp.repo.forecast.ForecastRepositoryImpl
 import com.doapps.android.weatherapp.ui.dashboard.ForecastMapper

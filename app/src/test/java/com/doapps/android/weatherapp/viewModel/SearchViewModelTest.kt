@@ -5,7 +5,7 @@ import android.os.Build
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.weatherapp.domain.usecase.SearchCitiesUseCase
 import com.doapps.android.weatherapp.ui.search.SearchViewModel
 import com.doapps.android.weatherapp.utils.domain.Resource

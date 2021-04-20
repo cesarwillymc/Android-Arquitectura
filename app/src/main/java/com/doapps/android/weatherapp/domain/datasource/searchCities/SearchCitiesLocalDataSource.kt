@@ -1,9 +1,9 @@
 package com.doapps.android.weatherapp.domain.datasource.searchCities
 
 import androidx.lifecycle.LiveData
-import com.doapps.android.weatherapp.db.dao.CitiesForSearchDao
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
-import com.doapps.android.weatherapp.domain.model.SearchResponse
+import com.doapps.android.conexionmodule.network.model.SearchResponse
+import com.doapps.android.conexionmodule.db.room.dao.CitiesForSearchDao
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 
 
 class SearchCitiesLocalDataSource (private val citiesForSearchDao: CitiesForSearchDao) {

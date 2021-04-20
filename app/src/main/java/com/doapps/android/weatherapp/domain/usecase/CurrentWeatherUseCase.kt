@@ -3,7 +3,7 @@ package com.doapps.android.weatherapp.domain.usecase
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.doapps.android.weatherapp.core.Constants
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 import com.doapps.android.weatherapp.repo.currentweather.CurrentWeatherRepository
 import com.doapps.android.weatherapp.repo.currentweather.CurrentWeatherRepositoryImpl
 import com.doapps.android.weatherapp.utils.UseCaseLiveData

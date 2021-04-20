@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.core.view.ViewCompat
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.R
 import com.doapps.android.weatherapp.core.BaseAdapter
 import com.doapps.android.weatherapp.databinding.ItemForecastBinding
-import com.doapps.android.weatherapp.domain.model.ListItem
 
 
 

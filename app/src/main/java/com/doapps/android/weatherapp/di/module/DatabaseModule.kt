@@ -1,7 +1,8 @@
 package com.doapps.android.weatherapp.di.module
 
 
-import com.doapps.android.weatherapp.db.WeatherDatabase
+
+import com.doapps.android.conexionmodule.db.room.WeatherDatabase
 import org.koin.dsl.module
 
 

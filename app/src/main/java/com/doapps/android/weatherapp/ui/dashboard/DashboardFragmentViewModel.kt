@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.switchMap
 import com.doapps.android.weatherapp.core.BaseViewModel
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.domain.usecase.CurrentWeatherUseCase
 import com.doapps.android.weatherapp.domain.usecase.ForecastUseCase
 import com.doapps.android.weatherapp.utils.domain.Resource

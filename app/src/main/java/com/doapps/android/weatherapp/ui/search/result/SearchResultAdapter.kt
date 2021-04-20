@@ -6,7 +6,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import com.doapps.android.weatherapp.core.BaseAdapter
 import com.doapps.android.weatherapp.databinding.ItemSearchResultBinding
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 
 
 

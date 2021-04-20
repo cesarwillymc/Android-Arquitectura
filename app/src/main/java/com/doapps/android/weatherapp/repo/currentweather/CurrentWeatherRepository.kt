@@ -1,7 +1,7 @@
 package com.doapps.android.weatherapp.repo.currentweather
 
 import androidx.lifecycle.LiveData
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 

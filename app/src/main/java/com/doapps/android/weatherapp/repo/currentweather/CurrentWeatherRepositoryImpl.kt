@@ -2,12 +2,12 @@ package com.doapps.android.weatherapp.repo.currentweather
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
+import com.doapps.android.conexionmodule.network.conexion.config.SafeApiRequest
+import com.doapps.android.conexionmodule.network.model.CurrentWeatherResponse
 import com.doapps.android.weatherapp.core.Constants.NetworkService.RATE_LIMITER_TYPE
-import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
-import com.doapps.android.weatherapp.domain.SafeApiRequest
+import com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherRemoteDataSource
-import com.doapps.android.weatherapp.domain.model.CurrentWeatherResponse
 import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 

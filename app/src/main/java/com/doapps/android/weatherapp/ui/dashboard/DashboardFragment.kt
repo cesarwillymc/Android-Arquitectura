@@ -4,11 +4,11 @@ import android.transition.TransitionInflater
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.R
 import com.doapps.android.weatherapp.core.BaseFragment
 import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.weatherapp.databinding.FragmentDashboardBinding
-import com.doapps.android.weatherapp.domain.model.ListItem
 import com.doapps.android.weatherapp.domain.usecase.CurrentWeatherUseCase
 import com.doapps.android.weatherapp.domain.usecase.ForecastUseCase
 import com.doapps.android.weatherapp.ui.dashboard.forecast.ForecastAdapter

@@ -5,9 +5,9 @@ import androidx.lifecycle.Observer
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.doapps.android.weatherapp.db.WeatherDatabase
-import com.doapps.android.weatherapp.db.dao.ForecastDao
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.WeatherDatabase
+import com.doapps.android.conexionmodule.db.room.dao.ForecastDao
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.util.createSampleForecastResponse
 import com.doapps.android.weatherapp.util.createSampleForecastWithCoord
 import io.mockk.every

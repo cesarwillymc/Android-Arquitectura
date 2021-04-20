@@ -3,10 +3,10 @@ package com.doapps.android.weatherapp.ui.weather_detail
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.core.BaseViewModel
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastLocalDataSource
-import com.doapps.android.weatherapp.domain.model.ListItem
 
 class WeatherDetailViewModel (private val forecastLocalDataSource: ForecastLocalDataSource) : BaseViewModel() {
 

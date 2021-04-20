@@ -19,7 +19,7 @@
         android:label="WeatherDetailFragment">
         <argument
             android:name="weatherItem"
-            app:argType="com.doapps.android.weatherapp.domain.model.ListItem" />
+            app:argType="com.doapps.android.conexionmodule.network.model.ListItem" />
     </fragment>
     <dialog
         android:id="@+id/githubDialog"

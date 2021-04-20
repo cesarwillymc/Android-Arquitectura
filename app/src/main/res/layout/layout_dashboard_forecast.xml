@@ -12,7 +12,7 @@
             type="com.doapps.android.weatherapp.utils.domain.Resource" />
         <variable
             name="data"
-            type="com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity" />
+            type="com.doapps.android.conexionmodule.db.room.entity.CurrentWeatherEntity" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

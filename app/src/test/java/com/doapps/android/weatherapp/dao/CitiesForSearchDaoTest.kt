@@ -5,9 +5,9 @@ import androidx.lifecycle.Observer
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.doapps.android.weatherapp.db.WeatherDatabase
-import com.doapps.android.weatherapp.db.dao.CitiesForSearchDao
-import com.doapps.android.weatherapp.db.entity.CitiesForSearchEntity
+import com.doapps.android.conexionmodule.db.room.WeatherDatabase
+import com.doapps.android.conexionmodule.db.room.dao.CitiesForSearchDao
+import com.doapps.android.conexionmodule.db.room.entity.CitiesForSearchEntity
 import com.doapps.android.weatherapp.util.generateCitiesForSearchEntity
 import io.mockk.every
 import io.mockk.mockk

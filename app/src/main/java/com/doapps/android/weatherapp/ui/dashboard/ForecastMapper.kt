@@ -1,6 +1,6 @@
 package com.doapps.android.weatherapp.ui.dashboard
 
-import com.doapps.android.weatherapp.domain.model.ListItem
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.utils.Mapper
 
 

@@ -1,7 +1,7 @@
 package com.doapps.android.weatherapp.domain.datasource.currentWeather
 
-import com.doapps.android.weatherapp.domain.WeatherAppAPI
-import com.doapps.android.weatherapp.domain.model.CurrentWeatherResponse
+import com.doapps.android.conexionmodule.network.conexion.WeatherAppAPI
+import com.doapps.android.conexionmodule.network.model.CurrentWeatherResponse
 import retrofit2.Response
 
 

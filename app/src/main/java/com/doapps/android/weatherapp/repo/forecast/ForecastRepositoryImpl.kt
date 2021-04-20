@@ -2,12 +2,12 @@ package com.doapps.android.weatherapp.repo.forecast
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
+import com.doapps.android.conexionmodule.network.conexion.config.SafeApiRequest
+import com.doapps.android.conexionmodule.network.model.ForecastResponse
 import com.doapps.android.weatherapp.core.Constants.NetworkService.RATE_LIMITER_TYPE
-import com.doapps.android.weatherapp.db.entity.ForecastEntity
-import com.doapps.android.weatherapp.domain.SafeApiRequest
+import com.doapps.android.conexionmodule.db.room.entity.ForecastEntity
 import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastRemoteDataSource
-import com.doapps.android.weatherapp.domain.model.ForecastResponse
 import com.doapps.android.weatherapp.utils.domain.RateLimiter
 import com.doapps.android.weatherapp.utils.domain.Resource
 import java.util.concurrent.TimeUnit

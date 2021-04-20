@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
+import com.doapps.android.conexionmodule.network.model.ListItem
 import com.doapps.android.weatherapp.core.BaseAdapter
 import com.doapps.android.weatherapp.databinding.ItemWeatherHourOfDayBinding
-import com.doapps.android.weatherapp.domain.model.ListItem
 
 
 class WeatherHourOfDayAdapter(private val callBack: (ListItem) -> Unit) : BaseAdapter<ListItem>(diffCallback) {
