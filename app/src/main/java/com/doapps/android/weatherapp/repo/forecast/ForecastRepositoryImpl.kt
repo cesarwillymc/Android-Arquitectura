@@ -1,4 +1,4 @@
-package com.doapps.android.weatherapp.repo
+package com.doapps.android.weatherapp.repo.forecast
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
@@ -13,23 +13,30 @@ import com.doapps.android.weatherapp.utils.domain.Resource
 import java.util.concurrent.TimeUnit
 
 
-
-class ForecastRepository (
+class ForecastRepositoryImpl(
     private val forecastRemoteDataSource: ForecastRemoteDataSource,
     private val forecastLocalDataSource: ForecastLocalDataSource
-):SafeApiRequest() {
+) : SafeApiRequest(), ForecastRepository {
 
-    private val forecastListRateLimit = RateLimiter<String>(30, TimeUnit.SECONDS)
+    override val forecastListRateLimit = RateLimiter<String>(30, TimeUnit.SECONDS)
 
-    fun loadForecastByCoord(lat: Double, lon: Double, fetchRequired: Boolean, units: String): LiveData<Resource<ForecastEntity>> {
+    override fun loadForecastByCoord(
+        lat: Double,
+        lon: Double,
+        fetchRequired: Boolean,
+        units: String
+    ): LiveData<Resource<ForecastEntity>> {
         return object : NetworkBoundResource<ForecastEntity, ForecastResponse>() {
-            override suspend fun saveCallResult(item: ForecastResponse) = forecastLocalDataSource.insertForecast(item)
+            override suspend fun saveCallResult(item: ForecastResponse) =
+                forecastLocalDataSource.insertForecast(item)
 
             override fun shouldFetch(data: ForecastEntity?): Boolean = fetchRequired
 
-            override fun loadFromDb(): LiveData<ForecastEntity> = forecastLocalDataSource.getForecast()
+            override fun loadFromDb(): LiveData<ForecastEntity> =
+                forecastLocalDataSource.getForecast()
 
-            override suspend fun createCall(): ForecastResponse = apiRequest { forecastRemoteDataSource.getForecastByGeoCords(lat, lon, units) }
+            override suspend fun createCall(): ForecastResponse =
+                apiRequest { forecastRemoteDataSource.getForecastByGeoCords(lat, lon, units) }
 
             override fun onFetchFailed() = forecastListRateLimit.reset(RATE_LIMITER_TYPE)
         }.asLiveData

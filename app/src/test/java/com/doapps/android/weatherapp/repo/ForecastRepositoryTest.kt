@@ -8,6 +8,7 @@ import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.weatherapp.db.entity.ForecastEntity
 import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.forecast.ForecastRemoteDataSource
+import com.doapps.android.weatherapp.repo.forecast.ForecastRepositoryImpl
 import com.doapps.android.weatherapp.util.createSampleForecastResponse
 import com.doapps.android.weatherapp.utils.domain.Resource
 import com.doapps.android.weatherapp.utils.domain.Status
@@ -35,12 +36,12 @@ class ForecastRepositoryTest {
     @MockK
     lateinit var forecastLocalDataSource: ForecastLocalDataSource
 
-    private lateinit var forecastRepository: ForecastRepository
+    private lateinit var forecastRepository: ForecastRepositoryImpl
 
     @Before
     fun setUp() {
         MockKAnnotations.init(this)
-        forecastRepository = ForecastRepository(forecastRemoteDataSource, forecastLocalDataSource)
+        forecastRepository = ForecastRepositoryImpl(forecastRemoteDataSource, forecastLocalDataSource)
     }
     @After
     fun after() {

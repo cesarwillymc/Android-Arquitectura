@@ -1,4 +1,4 @@
-package com.doapps.android.weatherapp.repo
+package com.doapps.android.weatherapp.repo.searchcities
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
@@ -14,14 +14,14 @@ import java.util.concurrent.TimeUnit
 
 
 
-class SearchCitiesRepository (
+class SearchCitiesRepositoryImpl (
     private val searchCitiesLocalDataSource: SearchCitiesLocalDataSource,
     private val searchCitiesRemoteDataSource: SearchCitiesRemoteDataSource
-){
+):SearchCitiesRepository{
 
-    private val rateLimiter = RateLimiter<String>(1, TimeUnit.SECONDS)
+    override val rateLimiter = RateLimiter<String>(1, TimeUnit.SECONDS)
 
-    fun loadCitiesByCityName(cityName: String?): LiveData<Resource<List<CitiesForSearchEntity>>> {
+    override fun loadCitiesByCityName(cityName: String?): LiveData<Resource<List<CitiesForSearchEntity>>> {
         return object : NetworkBoundResource<List<CitiesForSearchEntity>, SearchResponse>() {
             override suspend fun saveCallResult(item: SearchResponse) = searchCitiesLocalDataSource.insertCities(item)
 

@@ -1,4 +1,4 @@
-package com.doapps.android.weatherapp.repo
+package com.doapps.android.weatherapp.repo.currentweather
 
 import NetworkBoundResource
 import androidx.lifecycle.LiveData
@@ -14,23 +14,35 @@ import com.doapps.android.weatherapp.utils.domain.Resource
 import java.util.concurrent.TimeUnit
 
 
-
-class CurrentWeatherRepository (
+class CurrentWeatherRepositoryImpl(
     private val currentWeatherRemoteDataSource: CurrentWeatherRemoteDataSource,
     private val currentWeatherLocalDataSource: CurrentWeatherLocalDataSource
-):SafeApiRequest() {
+) : SafeApiRequest(), CurrentWeatherRepository {
 
-    private val currentWeatherRateLimit = RateLimiter<String>(30, TimeUnit.SECONDS)
+    override val currentWeatherRateLimit = RateLimiter<String>(30, TimeUnit.SECONDS)
 
-    fun loadCurrentWeatherByGeoCords(lat: Double, lon: Double, fetchRequired: Boolean, units: String): LiveData<Resource<CurrentWeatherEntity>> {
+    override fun loadCurrentWeatherByGeoCords(
+        lat: Double,
+        lon: Double,
+        fetchRequired: Boolean,
+        units: String
+    ): LiveData<Resource<CurrentWeatherEntity>> {
         return object : NetworkBoundResource<CurrentWeatherEntity, CurrentWeatherResponse>() {
-            override suspend fun saveCallResult(item: CurrentWeatherResponse) = currentWeatherLocalDataSource.insertCurrentWeather(item)
+            override suspend fun saveCallResult(item: CurrentWeatherResponse) =
+                currentWeatherLocalDataSource.insertCurrentWeather(item)
 
             override fun shouldFetch(data: CurrentWeatherEntity?): Boolean = fetchRequired
 
-            override fun loadFromDb(): LiveData<CurrentWeatherEntity> = currentWeatherLocalDataSource.getCurrentWeather()
+            override fun loadFromDb(): LiveData<CurrentWeatherEntity> =
+                currentWeatherLocalDataSource.getCurrentWeather()
 
-            override suspend fun createCall(): CurrentWeatherResponse = apiRequest { currentWeatherRemoteDataSource.getCurrentWeatherByGeoCords(lat, lon, units) }
+            override suspend fun createCall(): CurrentWeatherResponse = apiRequest {
+                currentWeatherRemoteDataSource.getCurrentWeatherByGeoCords(
+                    lat,
+                    lon,
+                    units
+                )
+            }
 
             override fun onFetchFailed() = currentWeatherRateLimit.reset(RATE_LIMITER_TYPE)
         }.asLiveData

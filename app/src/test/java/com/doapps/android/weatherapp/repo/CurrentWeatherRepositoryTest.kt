@@ -1,16 +1,14 @@
 package com.doapps.android.weatherapp.repo
 
 import android.os.Build
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.doapps.android.weatherapp.core.Constants
 import com.doapps.android.weatherapp.db.entity.CurrentWeatherEntity
-import com.doapps.android.weatherapp.di.module.*
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherLocalDataSource
 import com.doapps.android.weatherapp.domain.datasource.currentWeather.CurrentWeatherRemoteDataSource
+import com.doapps.android.weatherapp.repo.currentweather.CurrentWeatherRepositoryImpl
 import com.doapps.android.weatherapp.util.createSampleCurrentWeatherResponse
 import com.doapps.android.weatherapp.util.generateCurrentWeatherEntity
 import com.doapps.android.weatherapp.utils.domain.Resource
@@ -19,11 +17,8 @@ import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import org.junit.*
 import org.junit.runner.RunWith
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.test.KoinTest
-import org.koin.test.inject
 import org.robolectric.annotation.Config
 import retrofit2.Response
 
@@ -38,13 +33,13 @@ class CurrentWeatherRepositoryTest : KoinTest {
     @MockK
     lateinit var currentWeatherLocalDataSource: CurrentWeatherLocalDataSource
 
-    private lateinit var currentWeatherRepository: CurrentWeatherRepository
+    private lateinit var currentWeatherRepository: CurrentWeatherRepositoryImpl
 
     @Before
     fun setUp() {
         MockKAnnotations.init(this)
         currentWeatherRepository =
-            CurrentWeatherRepository(currentWeatherRemoteDataSource, currentWeatherLocalDataSource)
+            CurrentWeatherRepositoryImpl(currentWeatherRemoteDataSource, currentWeatherLocalDataSource)
     }
 
     @After
